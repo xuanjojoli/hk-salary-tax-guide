@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>薪俸税及強積金知識站 — 香港僱員指南</title>
+<meta name="description" content="面向香港僱員的薪俸税及強積金知識站，提供税率、免稅額、報税及交税時間表、MPF計算、離職轉工退休離港指引、政府官方辦理入口及估算工具。">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#0066b3;--primary-dark:#003d7a;--primary-light:#4da6e8;--primary-bg:#e8f2fb;
+  --accent:#f5a623;--accent-light:#f8c963;
+  --success:#2e8b57;--warning:#c75b12;--danger:#c0392b;
+  --bg:#f5f7fa;--white:#fff;--text:#1a2e35;--text-light:#5a6b75;--border:#dde4ea;
+  --radius:12px;--radius-sm:8px;
+  --shadow:0 2px 12px rgba(0,0,0,.08);--shadow-lg:0 8px 32px rgba(0,0,0,.12);
+  --max-width:1200px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft JhengHei","PingFang TC",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--primary);text-decoration:none;transition:color .2s}
+a:hover{color:var(--primary-dark);text-decoration:underline}
+img{max-width:100%;display:block}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+
+/* Navigation */
+.nav{position:sticky;top:0;z-index:1000;background:var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{color:#fff;font-size:1.15rem;font-weight:700;display:flex;align-items:center;gap:8px;text-decoration:none}
+.nav-logo:hover{text-decoration:none}
+.nav-logo .logo-icon{font-size:1.4rem}
+.nav-logo-img{height:32px;width:auto;flex-shrink:0}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.85);font-size:.875rem;padding:8px 12px;border-radius:var(--radius-sm);transition:all .2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.12);text-decoration:none}
+.nav-toggle{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);color:#fff;padding:60px 0 50px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:40px;background:var(--bg);clip-path:polygon(0 100%,100% 0,100% 100%)}
+.hero h1{font-size:2.4rem;font-weight:800;margin-bottom:16px;letter-spacing:-.5px}
+.hero p{font-size:1.1rem;max-width:680px;margin:0 auto 28px;opacity:.9}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:24px}
+.hero-badge{background:rgba(255,255,255,.15);padding:6px 16px;border-radius:20px;font-size:.85rem;border:1px solid rgba(255,255,255,.25)}
+.hero-search{max-width:500px;margin:0 auto;position:relative}
+.hero-search input{width:100%;padding:14px 20px 14px 48px;border:none;border-radius:50px;font-size:1rem;background:rgba(255,255,255,.95);color:var(--text)}
+.hero-search input:focus{outline:2px solid var(--accent)}
+.hero-search .search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--text-light);font-size:1.1rem}
+
+/* Section */
+.section{padding:56px 0}
+.section-header{text-align:center;margin-bottom:40px}
+.section-header h2{font-size:2rem;color:var(--primary);font-weight:800;margin-bottom:10px}
+.section-header p{color:var(--text-light);max-width:700px;margin:0 auto;font-size:1rem}
+.section-tag{display:inline-block;background:var(--primary-bg);color:var(--primary);padding:4px 14px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:12px;letter-spacing:.5px}
+
+/* Quick Answer Cards */
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.quick-card{background:var(--white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;border-top:4px solid var(--primary);cursor:pointer}
+.quick-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.quick-card .qc-icon{font-size:2.2rem;margin-bottom:12px}
+.quick-card h3{font-size:1.05rem;color:var(--primary-dark);margin-bottom:8px}
+.quick-card p{font-size:.875rem;color:var(--text-light);margin-bottom:12px}
+.quick-card .qc-link{font-size:.85rem;font-weight:600;color:var(--primary)}
+
+/* Card */
+.card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card-body{padding:24px}
+
+/* Tables */
+.tax-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.tax-table th{background:var(--primary);color:#fff;padding:12px 16px;text-align:left;font-weight:600}
+.tax-table td{padding:10px 16px;border-bottom:1px solid var(--border)}
+.tax-table tr:nth-child(even) td{background:var(--primary-bg)}
+.tax-table tr:hover td{background:#c4dffb}
+.tax-table .highlight{font-weight:700;color:var(--primary-dark)}
+
+/* Info Grid */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.info-card{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border-left:4px solid var(--primary)}
+.info-card h3{font-size:1.1rem;color:var(--primary-dark);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.info-card p{font-size:.9rem;color:var(--text);margin-bottom:8px}
+.info-card ul{list-style:none;padding-left:0}
+.info-card ul li{font-size:.875rem;padding:4px 0 4px 20px;position:relative;color:var(--text)}
+.info-card ul li::before{content:"▶";position:absolute;left:0;color:var(--primary-light);font-size:.7rem;top:7px}
+
+/* Timeline */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--primary-light)}
+.timeline-item{position:relative;padding-bottom:28px}
+.timeline-item::before{content:"";position:absolute;left:-28px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--primary);border:3px solid #fff;box-shadow:0 0 0 2px var(--primary-light)}
+.timeline-item .tl-date{font-weight:700;color:var(--primary);font-size:.9rem;margin-bottom:4px}
+.timeline-item .tl-title{font-weight:600;font-size:.95rem;margin-bottom:4px}
+.timeline-item p{font-size:.85rem;color:var(--text-light)}
+
+/* Tabs */
+.tabs{display:flex;gap:0;border-bottom:3px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
+.tab-btn{padding:12px 20px;font-size:.9rem;font-weight:600;background:none;border:none;cursor:pointer;color:var(--text-light);border-bottom:3px solid transparent;margin-bottom:-3px;transition:all .2s}
+.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary)}
+.tab-btn:hover{color:var(--primary)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* Accordion */
+.accordion{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.acc-item{background:var(--white);border-bottom:1px solid var(--border)}
+.acc-item:last-child{border-bottom:none}
+.acc-header{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.95rem;color:var(--primary-dark);transition:background .2s}
+.acc-header:hover{background:var(--primary-bg)}
+.acc-icon{transition:transform .3s;font-size:1.2rem;color:var(--primary)}
+.acc-item.open .acc-icon{transform:rotate(90deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.acc-item.open .acc-body{max-height:2000px}
+.acc-body-inner{padding:16px 20px 20px;font-size:.9rem;color:var(--text)}
+
+/* Calculator */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:768px){.calc-grid{grid-template-columns:1fr}}
+.calc-form{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.calc-result{background:var(--primary-dark);border-radius:var(--radius);padding:28px;color:#fff;box-shadow:var(--shadow)}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px;color:var(--text)}
+.form-group input,.form-group select{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:.95rem;background:var(--white);color:var(--text);transition:border .2s}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,102,179,.1)}
+.form-group .hint{font-size:.78rem;color:var(--text-light);margin-top:4px}
+.form-row{display:flex;gap:12px}
+.form-row .form-group{flex:1}
+.result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.9rem}
+.result-row:last-child{border-bottom:none}
+.result-row .label{opacity:.85}
+.result-row .value{font-weight:600}
+.result-highlight{margin-top:16px;padding:16px;background:rgba(255,255,255,.1);border-radius:var(--radius-sm);text-align:center}
+.result-highlight .big-number{font-size:2rem;font-weight:800;color:var(--accent-light)}
+.result-highlight .big-label{font-size:.85rem;opacity:.8;margin-top:4px}
+
+/* Gov Links */
+.gov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.gov-card{background:var(--white);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border-top:4px solid var(--accent);transition:transform .2s,box-shadow .2s}
+.gov-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.gov-card h3{font-size:1.05rem;color:var(--primary-dark);margin-bottom:8px}
+.gov-card .gov-desc{font-size:.85rem;color:var(--text-light);margin-bottom:12px}
+.gov-card .gov-link{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;color:var(--primary);background:var(--primary-bg);padding:6px 14px;border-radius:20px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.contact-card{background:var(--white);border-radius:var(--radius-sm);padding:20px;box-shadow:var(--shadow);border-left:4px solid var(--primary-light)}
+.contact-card h4{font-size:.95rem;color:var(--primary-dark);margin-bottom:6px}
+.contact-card .contact-role{font-size:.78rem;color:var(--text-light);margin-bottom:8px}
+.contact-card .contact-info{font-size:.85rem;color:var(--text)}
+.contact-card .contact-info a{display:block;margin-top:2px}
+
+/* FAQ */
+.faq-item{background:var(--white);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow)}
+.faq-q{padding:16px 20px;cursor:pointer;font-weight:600;font-size:.95rem;color:var(--primary-dark);display:flex;justify-content:space-between;align-items:center}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-a{max-height:1000px}
+.faq-a-inner{padding:0 20px 16px;font-size:.9rem;color:var(--text);line-height:1.7}
+
+/* Disclaimer */
+.disclaimer{background:#fff3cd;border:1px solid #ffeaa7;border-radius:var(--radius-sm);padding:16px 20px;margin:24px 0}
+.disclaimer-title{font-weight:700;color:#856404;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.disclaimer p{font-size:.85rem;color:#856404;margin:0}
+
+/* Footer */
+.footer{background:var(--primary-dark);color:rgba(255,255,255,.7);padding:40px 0 20px;text-align:center}
+.footer a{color:rgba(255,255,255,.85)}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:16px}
+.footer-links a{font-size:.85rem}
+.footer-copy{font-size:.78rem;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;margin-top:16px}
+
+/* Alert box */
+.alert{border-radius:var(--radius-sm);padding:12px 16px;margin:12px 0;font-size:.85rem}
+.alert-info{background:#d1ecf1;color:#0c5460;border-left:4px solid #0dcaf0}
+.alert-warning{background:#fff3cd;color:#856404;border-left:4px solid #ffc107}
+.alert-success{background:#d4edda;color:#155724;border-left:4px solid #28a745}
+
+/* Life event cards */
+.life-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.life-card{background:var(--white);border-radius:var(--radius);padding:20px;text-align:center;box-shadow:var(--shadow);cursor:pointer;transition:all .2s;border:2px solid transparent}
+.life-card.active{border-color:var(--primary);background:var(--primary-bg)}
+.life-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.life-card .le-icon{font-size:2rem;margin-bottom:8px}
+.life-card h4{font-size:.9rem;color:var(--primary-dark)}
+
+/* Step list */
+.step-list{list-style:none;padding-left:0}
+.step-list li{padding:12px 0 12px 36px;position:relative;border-bottom:1px solid var(--border);font-size:.9rem}
+.step-list li:last-child{border-bottom:none}
+.step-list li::before{content:counter(step);counter-increment:step;position:absolute;left:0;top:12px;width:24px;height:24px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700}
+.step-list{counter-reset:step}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--primary-dark);flex-direction:column;padding:12px;gap:0}
+  .nav-links.show{display:flex}
+  .nav-links a{padding:12px 16px;border-radius:0}
+  .nav-toggle{display:block}
+  .hero h1{font-size:1.8rem}
+  .section-header h2{font-size:1.6rem}
+  .tax-table{font-size:.78rem}
+  .tax-table th,.tax-table td{padding:8px 10px}
+}
+
+/* Back to top */
+.back-top{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:#fff;border:none;border-radius:50%;cursor:pointer;box-shadow:var(--shadow-lg);font-size:1.2rem;opacity:0;visibility:hidden;transition:all .3s;z-index:999}
+.back-top.show{opacity:1;visibility:visible}
+.back-top:hover{background:var(--primary-dark)}
+
+/* Search highlight */
+mark{background:var(--accent-light);padding:2px 4px;border-radius:3px}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo"><img src="hrssc-logo.svg" alt="HRSSC" class="nav-logo-img">薪税MPF知識站</a>
+    <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#quick-answers">快速入口</a></li>
+      <li><a href="#salaries-tax">薪俸税</a></li>
+      <li><a href="#mpf">強積金</a></li>
+      <li><a href="#life-events">生活事件</a></li>
+      <li><a href="#calculators">估算工具</a></li>
+      <li><a href="#gov-services">政府辦理</a></li>
+      <li><a href="#faq">常見問題</a></li>
+      <li><a href="#contacts">聯絡支援</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-badges">
+      <span class="hero-badge">2026/27 課税年度</span>
+      <span class="hero-badge">薪俸税 + 強積金</span>
+      <span class="hero-badge">香港僱員專用</span>
+    </div>
+    <h1>薪俸税及強積金知識站</h1>
+    <p>一站式解答你的薪俸税、強積金（MPF）疑問——從税率計算、報税期限、離職轉工退休離港指引，到政府官方辦理入口，幫你快速找到答案。</p>
+    <div class="hero-search">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="搜尋關鍵詞，例如：報税、MPF、離職…" oninput="searchContent(this.value)">
+    </div>
+  </div>
+</header>
+
+<!-- Quick Answers -->
+<section class="section" id="quick-answers">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">快速入口</span>
+      <h2>你嘅問題，即撳即答</h2>
+      <p>揀你最想知嘅問題，直接跳去相關内容同工具。</p>
+    </div>
+    <div class="quick-grid">
+      <div class="quick-card" onclick="scrollToSection('calculators')">
+        <div class="qc-icon">&#x1f4b0;</div>
+        <h3>我要繳幾多薪俸税？</h3>
+        <p>輸入年收入、家庭狀況，即時估算應繳税款，支援 2026/27 新免税額。</p>
+        <span class="qc-link">開始估算 →</span>
+      </div>
+      <div class="quick-card" onclick="scrollToSection('salaries-tax')">
+        <div class="qc-icon">&#x1f4c5;</div>
+        <h3>幾時報税、交税？</h3>
+        <p>報税表幾時發、幾時交、税款分期點俾，一覽全年度時間表。</p>
+        <span class="qc-link">查看時間表 →</span>
+      </div>
+      <div class="quick-card" onclick="scrollToSection('mpf')">
+        <div class="qc-icon">&#x1f4ca;</div>
+        <h3>我的強積金扣幾多？</h3>
+        <p>5% 點計？月入低過 $7,100 點算？超過 $30,000 又點？即計即知。</p>
+        <span class="qc-link">MPF 計算器 →</span>
+      </div>
+      <div class="quick-card" onclick="scrollToSection('life-events')">
+        <div class="qc-icon">&#x1f395;</div>
+        <h3>離職 / 轉工 / 退休 / 離港點算？</h3>
+        <p>每個人生階段要留意甚麼？MPF、税務、薪金結算一步步指引。</p>
+        <span class="qc-link">場景指引 →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Salaries Tax -->
+<section class="section" id="salaries-tax" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">知識說明</span>
+      <h2>薪俸税基礎知識</h2>
+      <p>薪俸税（Salaries Tax）是香港對在港產生或得自香港的入息所徵收的税項。了解税率、免税額、扣税項目和報税期限，是每位僱員的基本功課。</p>
+    </div>
+
+    <div class="info-grid" style="margin-bottom:32px">
+      <div class="info-card">
+        <h3>&#x1f4a1; 甚麼是薪俸税？</h3>
+        <p>凡在香港產生或得自香港的入息（包括工資、薪金、花紅、佣金、津貼等），均須繳納薪俸税。課税年度為每年 <strong>4月1日至翌年3月31日</strong>。</p>
+        <p>税務局會自動以<strong>累進税率</strong>和<strong>標準税率</strong>兩種方式計算，取較低者作為應繳税款。絕大部分僱員適用累進税率。</p>
+      </div>
+      <div class="info-card">
+        <h3>&#x1f4b1; 兩種計算方式</h3>
+        <ul>
+          <li><strong>累進税率</strong>：扣除免税額後的「應課税入息實額」按 2%–17% 分五段計算</li>
+          <li><strong>標準税率</strong>：就「入息淨額」（只扣支出，不扣免税額）按 15%/16% 計算</li>
+          <li>税務局自動選用税款較低者，你無須自己選</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="color:var(--primary);margin-bottom:16px;margin-top:32px">📊 累進税率表（2026/27 課税年度）</h3>
+    <p style="color:var(--text-light);font-size:.9rem;margin-bottom:16px">應課税入息實額 = 入息總額 − 扣除總額 − 免税總額</p>
+    <div style="overflow-x:auto;margin-bottom:32px">
+      <table class="tax-table">
+        <thead>
+          <tr><th>應課税入息實額（每年）</th><th>税率</th><th>該級税款</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>首 $50,000</td><td>2%</td><td>$1,000</td></tr>
+          <tr><td>另 $50,000（即 $50,001–$100,000）</td><td>6%</td><td>$3,000</td></tr>
+          <tr><td>另 $50,000（即 $100,001–$150,000）</td><td>10%</td><td>$5,000</td></tr>
+          <tr><td>另 $50,000（即 $150,001–$200,000）</td><td>14%</td><td>$7,000</td></tr>
+          <tr><td class="highlight">其後餘額（$200,001 以上）</td><td class="highlight">17%</td><td>—</td></tr>
+          <tr><td colspan="3" style="text-align:center;font-weight:700;color:var(--primary-dark)">首 $200,000 合共税款：$16,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>標準税率（2024/25 起）：</strong>首 $500 萬入息淨額按 <strong>15%</strong> 計算，超出 $500 萬部分按 <strong>16%</strong> 計算。僅極高收入人士才會適用標準税率。
+    </div>
+
+    <h3 style="color:var(--primary);margin-bottom:16px;margin-top:32px">📋 主要免税額一覽</h3>
+    <div style="overflow-x:auto;margin-bottom:32px">
+      <table class="tax-table">
+        <thead>
+          <tr><th>免税額項目</th><th>2025/26 年度</th><th>2026/27 年度（已立法）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>基本免税額</td><td>$132,000</td><td class="highlight">$145,000</td></tr>
+          <tr><td>已婚人士免税額</td><td>$264,000</td><td class="highlight">$290,000</td></tr>
+          <tr><td>子女免税額（每名，第 1–9 名）</td><td>$130,000</td><td class="highlight">$140,000</td></tr>
+          <tr><td>子女額外免税額（每名）</td><td>$130,000</td><td class="highlight">$140,000</td></tr>
+          <tr><td>供養父母／祖父母（60 歲或以上，每名）</td><td>$50,000</td><td class="highlight">$55,000</td></tr>
+          <tr><td>供養父母／祖父母（55–59 歲，每名）</td><td>$25,000</td><td class="highlight">$27,500</td></tr>
+          <tr><td>單親免税額</td><td>$132,000</td><td>$145,000</td></tr>
+          <tr><td>傷殘受養人免税額（每名）</td><td>$75,000</td><td>$75,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>子女免税額變動（2026/27 起）：</strong>初生子女額外免税額的享有期限由「出生當年」延長至「出生後首兩年」，即首兩年每年可享雙倍免税額。每名子女合計最高 $280,000/年。
+    </div>
+
+    <h3 style="color:var(--primary);margin-bottom:16px;margin-top:32px">💰 可扣税項目</h3>
+    <div style="overflow-x:auto;margin-bottom:32px">
+      <table class="tax-table">
+        <thead><tr><th>扣除項目</th><th>每年上限</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>強積金強制性供款</td><td>$18,000</td><td>自動計算，無需申報（如僱主已申報）</td></tr>
+          <tr><td>居所貸款利息</td><td>$100,000</td><td>名下物業，用作自住</td></tr>
+          <tr><td>住宅租金扣除</td><td>$100,000</td><td>無物業者，名下租約，自住物業</td></tr>
+          <tr><td>合資格年金保費及可扣税 MPF 自願性供款</td><td>$60,000（合計）</td><td>兩者共享此上限</td></tr>
+          <tr><td>長者住宿照顧開支</td><td>$100,000</td><td>支付予安老院的費用</td></tr>
+          <tr><td>個人進修開支</td><td>$100,000</td><td>與現在職業相關的進修</td></tr>
+          <tr><td>認可慈善捐款</td><td>不少於 $100，扣税上限為入息減去捐款後的 35%</td><td>捐給認可慈善機構</td></tr>
+          <tr><td>醫療保險保费（自願醫保）</td><td>$8,000</td><td>自願醫保計劃保單</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="color:var(--primary);margin-bottom:16px;margin-top:32px">📅 報税及交税時間表</h3>
+    <div class="card" style="margin-bottom:24px">
+      <div class="card-body">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-date">5月初</div>
+            <div class="tl-title">收到報税表（BIR60）</div>
+            <p>税務局寄出綠色信封個別人士報税表。如採用「税務易」（eTAX），可於個人税務網站查閱。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">6月初（紙本）/ 7月初（電子）</div>
+            <div class="tl-title">提交報税表截止</div>
+            <p>紙本報税表須於發出日期起 1 個月內交回。使用 eTAX 電子報税可自動享一個月寬限期。獨資業務東主可延至 8 月初。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">10月–11月</div>
+            <div class="tl-title">收到評税通知書</div>
+            <p>税務局發出評税通知書，列明應繳税款及繳税期限。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">翌年 1月（第一期）</div>
+            <div class="tl-title">第一期繳税</div>
+            <p>如税款超過一定金額，分兩期繳付。第一期約佔總税款 75%，連同暫繳税一併繳交。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-date">翌年 4月（第二期）</div>
+            <div class="tl-title">第二期繳税</div>
+            <p>第二期約佔總税款 25%。如税額較低可能一次過繳付。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>暫繳税（Provisional Tax）：</strong>第一期税款中包含<strong>暫繳税</strong>——即預先繳付下一課税年度的税款。當下一年的正式税款評定後，暫繳税會自動抵扣。如預期收入下降，可申請緩繳暫繳税。
+    </div>
+
+    <div class="info-grid" style="margin-top:24px">
+      <div class="info-card">
+        <h3>&#x1f4a1; 一次性税款寬減</h3>
+        <p><strong>2025/26 年度：</strong>寬減 100% 薪俸税，每宗上限 $3,000（已立法）。</p>
+        <p>此為政府按年度財政狀況推出的臨時措施，<strong>不適用於暫繳税</strong>，暫繳税仍須依時繳付。</p>
+      </div>
+      <div class="info-card">
+        <h3>&#x1f4a1; 無收入也須報税</h3>
+        <p>即使收入不超過免税額而無須繳税，<strong>如收到報税表仍須依時填交</strong>。逾期交表會被罰款或檢控。</p>
+        <p>更改通訊地址須於 1 個月內通知税務局。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MPF -->
+<section class="section" id="mpf">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">知識說明</span>
+      <h2>強積金（MPF）基礎知識</h2>
+      <p>強制性公積金計劃（MPF）是香港的強制性退休保障制度。僱主及僱員各按僱員有關入息的 5% 供款，設有上下限。</p>
+    </div>
+
+    <div class="info-grid" style="margin-bottom:32px">
+      <div class="info-card">
+        <h3>&#x1f4a1; 甚麼是強積金？</h3>
+        <p>強積金（MPF）是香港法定的退休保障制度，自 2000 年 12 月實施。凡 18 至 65 歲、在香港就業的僱員或自僱人士，一般均須參加。</p>
+        <p>強積金由<strong>積金局（MPFA）</strong>規管，供款存入個人帳戶並可作投資選擇。2024 年起透過 <strong>eMPF 平台</strong>統一處理供款。</p>
+      </div>
+      <div class="info-card">
+        <h3>&#x1f4b1; 供款基本規則</h3>
+        <ul>
+          <li>僱主及僱員<strong>各供 5%</strong>有關入息</li>
+          <li>最低有關入息：<strong>$7,100/月</strong></li>
+          <li>最高有關入息：<strong>$30,000/月</strong></li>
+          <li>每方供款上限：<strong>$1,500/月</strong></li>
+          <li>供款日：每月 <strong>10 號</strong>前</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="color:var(--primary);margin-bottom:16px;margin-top:32px">📊 MPF 供款計算表（月薪僱員）</h3>
+    <div style="overflow-x:auto;margin-bottom:32px">
+      <table class="tax-table">
+        <thead><tr><th>每月有關入息</th><th>僱主強制性供款</th><th>僱員強制性供款</th></tr></thead>
+        <tbody>
+          <tr><td>少於 $7,100</td><td>有關入息 × 5%</td><td class="highlight">$0（無須供款）</td></tr>
+          <tr><td>$7,100 至 $30,000</td><td>有關入息 × 5%</td><td>有關入息 × 5%</td></tr>
+          <tr><td>多於 $30,000</td><td class="highlight">$1,500（上限）</td><td class="highlight">$1,500（上限）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>「有關入息」（Relevant Income）</strong>包括：工資、薪金、假期薪酬、佣金、花紅、酬金、津貼等。但<strong>不包括</strong>：遣散費、長期服務金、膳食／交通非現金津貼、僱主直接支付的醫療費用等。
+    </div>
+
+    <div class="info-grid" style="margin-bottom:32px;margin-top:32px">
+      <div class="info-card">
+        <h3>&#x1f395; 新入職 — 供款假期</h3>
+        <p>新僱員享有<strong>首 30 天供款假期</strong>——首 30 天無須作僱員供款。但<strong>僱主仍須由第一天起供款</strong>。</p>
+        <p>30 天後的首個不完整糧期也無須僱員供款。例如 6月5日入職，6月5日至7月4日為供款假期，7月（不完整糧期）也免供，8月起正式供款。</p>
+      </div>
+      <div class="info-card">
+        <h3>&#x1f4c5; 供款日規則</h3>
+        <p>月薪僱員的供款日為<strong>每月 10 號</strong>前。例如 9 月糧期的供款須於 10 月 10 日或之前經 eMPF 平台繳付。</p>
+        <p>如供款日為星期六、公眾假期、黑色暴雨或八號風球警告日，則順延至下一個非上述日子。</p>
+      </div>
+    </div>
+
+    <div class="alert alert-success" style="margin-top:24px">
+      <strong>取消強積金對沖安排（2025年5月1日起生效）：</strong>僱主的強積金強制性供款<strong>不能再用以抵銷</strong>遣散費或長期服務金。政府設有資助計劃協助僱主適應新安排。2025年5月1日前已累積的僱主供款仍可用於舊有對沖安排。
+    </div>
+
+    <div class="info-grid" style="margin-top:24px">
+      <div class="info-card">
+        <h3>&#x1f4b8; MPF 投資選擇</h3>
+        <p>強積金設有不同的<strong>成分基金</strong>供選擇：</p>
+        <ul>
+          <li>核心累積基金（預設投資）</li>
+          <li>保守基金</li>
+          <li>保證基金</li>
+          <li>債券基金</li>
+          <li>混合資產基金</li>
+          <li>股票基金</li>
+        </ul>
+        <p>預設投資策略（DIS）包含核心累積基金及年齡導向的投資組合，適合無暇管理投資的成員。</p>
+      </div>
+      <div class="info-card">
+        <h3>&#x1f4c4; 員工權益</h3>
+        <ul>
+          <li>每月供款後 7 個工作天內，僱主須提供月度供款記錄</li>
+          <li>每個財政期結束後 3 個月內，獲發年度權益報表</li>
+          <li>可透過 eMPF 平台查閱帳戶詳情</li>
+          <li>如懷疑僱主欠供，應先向僱主或 eMPF 查詢，再向積金局投訴</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Life Events -->
+<section class="section" id="life-events" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">場景引導</span>
+      <h2>生活事件指引</h2>
+      <p>入職、轉工、離職、退休、離港——每個人生轉折都有不同的税務和強積金要注意事項。揀選你的情況，按步驟處理。</p>
+    </div>
+
+    <div class="life-grid" style="margin-bottom:24px">
+      <div class="life-card active" onclick="switchLifeEvent(0,this)">
+        <div class="le-icon">&#x1f44b;</div><h4>入職</h4>
+      </div>
+      <div class="life-card" onclick="switchLifeEvent(1,this)">
+        <div class="le-icon">&#x1f501;</div><h4>轉工</h4>
+      </div>
+      <div class="life-card" onclick="switchLifeEvent(2,this)">
+        <div class="le-icon">&#x1f44b;&#x1f3fb;</div><h4>離職</h4>
+      </div>
+      <div class="life-card" onclick="switchLifeEvent(3,this)">
+        <div class="le-icon">&#x1f393;</div><h4>退休</h4>
+      </div>
+      <div class="life-card" onclick="switchLifeEvent(4,this)">
+        <div class="le-icon">&#x2708;&#xfe0f;</div><h4>離港</h4>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <!-- 入職 -->
+        <div class="tab-panel active" id="lifePanel0">
+          <h3 style="color:var(--primary);margin-bottom:16px">&#x1f44b; 新入職要注意甚麼？</h3>
+          <p style="color:var(--text-light);margin-bottom:20px">恭喜入職CTG！以下是你需要了解和辦理的事項：</p>
+          <ol class="step-list">
+            <li><strong>強積金登記：</strong>僱主須在你入職後 60 天內為你登記參加強積金計劃。你可選擇留在舊僱主的計劃（如適用）或加入新僱主選定的計劃。</li>
+            <li><strong>首 30 天供款假期：</strong>首 30 天你無須作僱員供款，但僱主須由第一天起供款。30 天後的首個不完整糧期也免供。</li>
+            <li><strong>税率及免税額：</strong>確認你的婚姻、子女、供養父母等免税額資料，年底報税時可申報。</li>
+            <li><strong>糧單（Payslip）核對：</strong>每月收到糧單後，留意強積金供款是否正確扣減、税務編號是否正確。</li>
+            <li><strong>稅務編號：</strong>確保已持有税務編號（通常在首次報税時自動開立）。如地址有變，記得通知税務局。</li>
+          </ol>
+          <div class="alert alert-info" style="margin-top:16px">
+            <strong>提示：</strong>保留入職文件和糧單紀錄，報税時需要填報全年收入。如年中轉工，兩份糧單的收入都要申報。
+          </div>
+        </div>
+
+        <!-- 轉工 -->
+        <div class="tab-panel" id="lifePanel1">
+          <h3 style="color:var(--primary);margin-bottom:16px">&#x1f501; 轉工要注意甚麼？</h3>
+          <p style="color:var(--text-light);margin-bottom:20px">轉換工作時，舊公司和新公司的税務及強積金都需要妥善處理：</p>
+          <ol class="step-list">
+            <li><strong>強積金處理：</strong>離開舊公司後，你的 MPF 帳戶可選擇轉移至新僱主的計劃、保留在原計劃、或轉移至自僱的個人帳戶。你可透過 eMPF 平台辦理。</li>
+            <li><strong>最後薪金及結算：</strong>確認舊公司的最後薪金、未放年假補償、花紅結算等，保留所有糧單。</li>
+            <li><strong>稅務申報：</strong>報税時須申報舊公司和新公司的全年收入合計。兩份糧單的收入都要填報。</li>
+            <li><strong>新公司 MPF 登記：</strong>新僱主會在新入職 60 天內為你登記強積金，享受首 30 天供款假期。</li>
+            <li><strong>免稅額確認：</strong>免税額是按全年計算的，不論年中有否轉工，基本免税額不會因轉工而增加。</li>
+          </ol>
+          <div class="alert alert-warning" style="margin-top:16px">
+            <strong>注意：</strong>如年中轉工，該課税年度的入息為兩份工作收入之和。可能因收入增加而令税率跳升，預留税款。
+          </div>
+        </div>
+
+        <!-- 離職 -->
+        <div class="tab-panel" id="lifePanel2">
+          <h3 style="color:var(--primary);margin-bottom:16px">&#x1f44b;&#x1f3fb; 離職要注意甚麼？</h3>
+          <p style="color:var(--text-light);margin-bottom:20px">不論是自願離職、被解僱還是合約期滿，以下是需要處理的事項：</p>
+          <ol class="step-list">
+            <li><strong>通知期及最後工作日：</strong>按合約規定給予通知期。最後工作日前的通知期內，薪酬照常計算。</li>
+            <li><strong>最後薪金結算：</strong>包括未放年假補償、花紅、酬金等。保留最後糧單作報税之用。</li>
+            <li><strong>遣散費 / 長期服務金：</strong>如因裁員被解僱（連續受僱滿 2 年可申領遣散費，滿 5 年可申領長期服務金），2025年5月1日起僱主 MPF 供款不能對沖。</li>
+            <li><strong>強積金處理：</strong>離職後可選擇保留、轉移或（符合條件下）提取 MPF 累算權益。</li>
+            <li><strong>僱主申報：</strong>僱主須在僱員離職後 4 個月內提交僱主報税表（BIR56B），申報你的入息。</li>
+            <li><strong>你自己的報税：</strong>翌年報税時，仍須申報該年度從舊公司所得的全部收入。</li>
+          </ol>
+          <div class="alert alert-success" style="margin-top:16px">
+            <strong>取消對沖：</strong>2025年5月1日起，僱主強積金強制性供款不可抵銷遣散費／長期服務金。政府設有資助計劃。
+          </div>
+        </div>
+
+        <!-- 退休 -->
+        <div class="tab-panel" id="lifePanel3">
+          <h3 style="color:var(--primary);margin-bottom:16px">&#x1f393; 退休要注意甚麼？</h3>
+          <p style="color:var(--text-light);margin-bottom:20px">退休是人生重要階段，強積金和税務安排如下：</p>
+          <ol class="step-list">
+            <li><strong>強積金提取：</strong>年滿 65 歲可一筆過或分期提取累算權益。65 歲前如符合「提早退休」等特定條件也可申請提取。</li>
+            <li><strong>強積金投資：</strong>接近退休年齡時，建議評估風險承受能力，考慮調整至較保守的投資組合（如保守基金、保證基金）。</li>
+            <li><strong>稅務安排：</strong>退休後如仍有投資收入、租金收入等，仍須報税。強積金提取<strong>無須繳税</strong>。</li>
+            <li><strong>最後薪金：</strong>退休當年的薪酬仍須申報薪俸税。長期服務金亦可能須申報。</li>
+            <li><strong>長者生活津貼 / 生果金：</strong>可向社會福利署查詢是否符合資格申請。</li>
+          </ol>
+          <div class="alert alert-info" style="margin-top:16px">
+            <strong>提早提取條件：</strong>65 歲前可提取 MPF 的情況包括：提早退休（年滿 60 歲且永久退休）、完全喪失行為能力、小額結餘（$5,000 以下）、永久離港等。
+          </div>
+        </div>
+
+        <!-- 離港 -->
+        <div class="tab-panel" id="lifePanel4">
+          <h3 style="color:var(--primary);margin-bottom:16px">&#x2708;&#xfe0f; 離港要注意甚麼？</h3>
+          <p style="color:var(--text-light);margin-bottom:20px">如你計劃永久離開香港，需要處理以下税務和強積金事宜：</p>
+          <ol class="step-list">
+            <li><strong>申請提前評税：</strong>離港前可向税務局申請提前評税，以便在離港前清繳税款。申請後税務局會盡快發出評税通知書。</li>
+            <li><strong>提交報税表：</strong>離港人士仍須就該課税年度在港所得入息申報薪俸税。如在離港前已收到報税表，須依時填交。</li>
+            <li><strong>清繳税款：</strong>離港前須清繳所有税款。如未收到評税通知書，可主動聯絡税務局查詢。</li>
+            <li><strong>強積金提取：</strong>如永久離港且無意返回香港工作，可申請一筆過提取強積金累算權益。須提供離港證明文件。</li>
+            <li><strong>通知僱主及銀行：</strong>通知僱主離港日期，確認最後薪金及税務安排。更新銀行及保險等聯絡資料。</li>
+          </ol>
+          <div class="alert alert-warning" style="margin-top:16px">
+            <strong>重要：</strong>離港前未清繳税款，税務局可向入境事務處發出通知阻止離境。請務必在離港前處理好所有税務事宜。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Calculators -->
+<section class="section" id="calculators">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">估算工具</span>
+      <h2>薪俸税及強積金估算器</h2>
+      <p>以下工具僅供參考，不代替税務局的正式評税結果。實際税款以税務局評税通知書為準。</p>
+    </div>
+
+    <div class="disclaimer">
+      <div class="disclaimer-title">&#9888;&#65039; 重要聲明</div>
+      <p>本網站的估算工具僅供參考用途，不構成税務建議。計算結果可能因個人情況而異，實際應繳税款以<strong>税務局評税通知書</strong>為準。如有疑問，請聯絡税務局（熱線：187 8022）或HRSSC服務台。</p>
+    </div>
+
+    <div class="tabs" style="margin-top:24px">
+      <button class="tab-btn active" onclick="switchCalcTab(0,this)">薪俸税估算器</button>
+      <button class="tab-btn" onclick="switchCalcTab(1,this)">強積金計算器</button>
+      <button class="tab-btn" onclick="switchCalcTab(2,this)">實到手薪計算器</button>
+    </div>
+
+    <!-- Tax Calculator -->
+    <div class="tab-panel active" id="calcPanel0">
+      <div class="calc-grid">
+        <div class="calc-form">
+          <h3 style="color:var(--primary);margin-bottom:20px">&#x1f4b0; 薪俸税估算器</h3>
+          <div class="form-group">
+            <label>全年薪俸收入（港幣）</label>
+            <input type="number" id="taxIncome" value="300000" min="0" oninput="calcTax()">
+            <div class="hint">包括基本薪金、花紅、佣金、津貼等全年總額</div>
+          </div>
+          <div class="form-group">
+            <label>婚姻狀況</label>
+            <select id="taxMarital" onchange="calcTax()">
+              <option value="0">未婚</option>
+              <option value="1">已婚（配偶無收入）</option>
+              <option value="0.5">已婚（配偶有收入，各評各税）</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>子女數目</label>
+              <input type="number" id="taxChildren" value="0" min="0" max="9" oninput="calcTax()">
+              <div class="hint">未滿 18 歲或全職學生 18–25 歲</div>
+            </div>
+            <div class="form-group">
+              <label>初生子女（出生首兩年）</label>
+              <input type="number" id="taxNewborn" value="0" min="0" max="9" oninput="calcTax()">
+              <div class="hint">2026/27 起享雙倍免税額</div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>供養父母／祖父母（60 歲或以上）</label>
+              <input type="number" id="taxParent60" value="0" min="0" max="4" oninput="calcTax()">
+            </div>
+            <div class="form-group">
+              <label>供養父母／祖父母（55–59 歲）</label>
+              <input type="number" id="taxParent55" value="0" min="0" max="4" oninput="calcTax()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>其他扣除（每年總額）</label>
+            <input type="number" id="taxOtherDed" value="0" min="0" oninput="calcTax()">
+            <div class="hint">居所貸款利息、租金扣除、年金保費、進修開支、慈善捐款等</div>
+          </div>
+          <div class="form-group">
+            <label>課税年度</label>
+            <select id="taxYear" onchange="calcTax()">
+              <option value="2026">2026/27（現行）</option>
+              <option value="2025">2025/26</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result" id="taxResult">
+          <div style="margin-bottom:12px;font-size:.85rem;opacity:.8">估算結果</div>
+          <div class="result-row"><span class="label">全年薪俸收入</span><span class="value" id="r-income">$300,000</span></div>
+          <div class="result-row"><span class="label">強積金強制性供款（扣税）</span><span class="value" id="r-mpf">$18,000</span></div>
+          <div class="result-row"><span class="label">其他扣除</span><span class="value" id="r-otherded">$0</span></div>
+          <div class="result-row"><span class="label">免税總額</span><span class="value" id="r-allowance">$145,000</span></div>
+          <div class="result-row"><span class="label">應課税入息實額</span><span class="value" id="r-netchargeable">$137,000</span></div>
+          <div class="result-row"><span class="label">累進税計算</span><span class="value" id="r-progressive">$3,820</span></div>
+          <div class="result-row"><span class="label">標準税率計算</span><span class="value" id="r-standard">$42,300</span></div>
+          <div class="result-highlight">
+            <div class="big-number" id="r-taxpayable">$3,820</div>
+            <div class="big-label">預計應繳薪俸税（取較低者）</div>
+          </div>
+          <div class="result-row" style="margin-top:12px"><span class="label">每月平均税款</span><span class="value" id="r-monthly">$318</span></div>
+          <div class="result-row"><span class="label">有效税率</span><span class="value" id="r-effectiverate">1.27%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MPF Calculator -->
+    <div class="tab-panel" id="calcPanel1">
+      <div class="calc-grid">
+        <div class="calc-form">
+          <h3 style="color:var(--primary);margin-bottom:20px">&#x1f4ca; 強積金計算器</h3>
+          <div class="form-group">
+            <label>每月有關入息（港幣）</label>
+            <input type="number" id="mpfIncome" value="25000" min="0" oninput="calcMPF()">
+            <div class="hint">包括工資、薪金、花紅、佣金、津貼等</div>
+          </div>
+          <div class="form-group">
+            <label>每月花紅／酬金（如有，另計）</label>
+            <input type="number" id="mpfBonus" value="0" min="0" oninput="calcMPF()">
+            <div class="hint">花紅也屬有關入息，需計入 MPF</div>
+          </div>
+          <div class="form-group">
+            <label>是否新入職首 60 天？</label>
+            <select id="mpfNew" onchange="calcMPF()">
+              <option value="0">否</option>
+              <option value="1">是（享有供款假期）</option>
+            </select>
+            <div class="hint">首 30 天僱員免供款</div>
+          </div>
+        </div>
+        <div class="calc-result" id="mpfResult">
+          <div style="margin-bottom:12px;font-size:.85rem;opacity:.8">MPF 估算結果</div>
+          <div class="result-row"><span class="label">每月有關入息</span><span class="value" id="m-income">$25,000</span></div>
+          <div class="result-row"><span class="label">入息範圍</span><span class="value" id="m-range">$7,100–$30,000</span></div>
+          <div class="result-row"><span class="label">僱主強制性供款</span><span class="value" id="m-employer">$1,250</span></div>
+          <div class="result-row"><span class="label">僱員強制性供款</span><span class="value" id="m-employee">$1,250</span></div>
+          <div class="result-row"><span class="label">僱員每月扣款</span><span class="value" id="m-deduction">$1,250</span></div>
+          <div class="result-highlight">
+            <div class="big-number" id="m-monthlydeduction">$1,250</div>
+            <div class="big-label">每月 MPF 扣款（僱員部分）</div>
+          </div>
+          <div class="result-row" style="margin-top:12px"><span class="label">全年僱員供款</span><span class="value" id="m-annual">$15,000</span></div>
+          <div class="result-row"><span class="label">全年僱主供款</span><span class="value" id="m-annual-employer">$15,000</span></div>
+          <div class="result-row"><span class="label">税務扣減上限</span><span class="value" id="m-taxded">$15,000</span></div>
+          <div class="result-row"><span class="label">扣稅後入息（月）</span><span class="value" id="m-netafter">$23,750</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Take-home Pay Calculator -->
+    <div class="tab-panel" id="calcPanel2">
+      <div class="calc-grid">
+        <div class="calc-form">
+          <h3 style="color:var(--primary);margin-bottom:20px">&#x1f4b6; 實到手薪計算器</h3>
+          <div class="form-group">
+            <label>每月基本薪金（港幣）</label>
+            <input type="number" id="thpMonthly" value="25000" min="0" oninput="calcTHP()">
+          </div>
+          <div class="form-group">
+            <label>每月花紅／津貼</label>
+            <input type="number" id="thpBonus" value="0" min="0" oninput="calcTHP()">
+          </div>
+          <div class="form-group">
+            <label>婚姻狀況</label>
+            <select id="thpMarital" onchange="calcTHP()">
+              <option value="0">未婚</option>
+              <option value="1">已婚（配偶無收入）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>子女數目</label>
+            <input type="number" id="thpChildren" value="0" min="0" max="9" oninput="calcTHP()">
+          </div>
+          <div class="form-group">
+            <label>其他免税額及扣除（每年）</label>
+            <input type="number" id="thpOtherAllow" value="0" min="0" oninput="calcTHP()">
+            <div class="hint">供養父母、居所貸款利息、租金扣除、年金等</div>
+          </div>
+        </div>
+        <div class="calc-result" id="thpResult">
+          <div style="margin-bottom:12px;font-size:.85rem;opacity:.8">實到手薪估算（2026/27）</div>
+          <div class="result-row"><span class="label">每月總收入</span><span class="value" id="t-gross">$25,000</span></div>
+          <div class="result-row"><span class="label">每月 MPF 扣款</span><span class="value" id="t-mpf">-$1,250</span></div>
+          <div class="result-row"><span class="label">MPF 後月入</span><span class="value" id="t-aftermpf">$23,750</span></div>
+          <div class="result-row"><span class="label">全年總收入</span><span class="value" id="t-annualgross">$300,000</span></div>
+          <div class="result-row"><span class="label">全年 MPF 供款</span><span class="value" id="t-annualmpf">-$15,000</span></div>
+          <div class="result-row"><span class="label">預計全年税款</span><span class="value" id="t-tax">-$3,820</span></div>
+          <div class="result-highlight">
+            <div class="big-number" id="t-takehome">$23,432</div>
+            <div class="big-label">每月實到手薪（約）</div>
+          </div>
+          <div class="result-row" style="margin-top:12px"><span class="label">全年實得</span><span class="value" id="t-annualnet">$281,180</span></div>
+          <div class="result-row"><span class="label">總扣減佔比</span><span class="value" id="t-percentage">6.3%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Government Services -->
+<section class="section" id="gov-services" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">官方辦理入口</span>
+      <h2>政府官方服務入口</h2>
+      <p>以下為香港政府官方平台，可直接辦理報税、電子繳税、強積金查詢等事項。所有連結均為官方網站。</p>
+    </div>
+
+    <div class="gov-grid">
+      <div class="gov-card">
+        <h3>&#x1f4dc; 税務局（IRD）</h3>
+        <p class="gov-desc">薪俸税計算、報税表下載、繳税安排、税務查詢。提供薪俸税計算器及電子報税。</p>
+        <a class="gov-link" href="https://www.ird.gov.hk" target="_blank" rel="noopener">前往税務局 →</a>
+      </div>
+      <div class="gov-card">
+        <h3>&#x1f4a2; 税務局薪俸税計算器</h3>
+        <p class="gov-desc">官方薪俸税計算器，輸入入息及免税額即時計算税款。2026/27 年度適用。</p>
+        <a class="gov-link" href="https://www.ird.gov.hk/chi/ese/st_comp_2026_27/cstcfrm.htm" target="_blank" rel="noopener">使用計算器 →</a>
+      </div>
+      <div class="gov-card">
+        <h3>&#x1f4bb; 「税務易」eTAX 電子報税</h3>
+        <p class="gov-desc">網上報税、查閱税務狀況、電子繳税。使用 eTAX 報税可獲一個月寬限期。</p>
+        <a class="gov-link" href="https://www.gov.hk/tc/residents/taxes/etax/" target="_blank" rel="noopener">網上報税 →</a>
+      </div>
+      <div class="gov-card">
+        <h3>&#x1f3e2; 積金局（MPFA）</h3>
+        <p class="gov-desc">強積金法規、供款計算、投資選擇、投訴渠道、取消對沖安排查詢。</p>
+        <a class="gov-link" href="https://www.mpfa.org.hk" target="_blank" rel="noopener">前往積金局 →</a>
+      </div>
+      <div class="gov-card">
+        <h3>&#x1f4f1; eMPF 電子平台</h3>
+        <p class="gov-desc">強積金供款記錄查詢、帳戶管理、累算權益提取申請、轉移 MPF 帳戶。</p>
+        <a class="gov-link" href="https://www.empf.com.hk" target="_blank" rel="noopener">eMPF 平台 →</a>
+      </div>
+      <div class="gov-card">
+        <h3>&#x1f310; GovHK 政府一站通</h3>
+        <p class="gov-desc">政府綜合資訊平台，涵蓋税務、強積金、就業、退休等公共服務入口。</p>
+        <a class="gov-link" href="https://www.gov.hk" target="_blank" rel="noopener">政府一站通 →</a>
+      </div>
+      <div class="gov-card">
+        <h3>&#x1f468;&#x200d;&#x2695;&#xfe0f; 勞工處</h3>
+        <p class="gov-desc">僱傭權益、遣散費、長期服務金、勞資糾紛調解、僱傭條例查詢。</p>
+        <a class="gov-link" href="https://www.labour.gov.hk" target="_blank" rel="noopener">前往勞工處 →</a>
+      </div>
+      <div class="gov-card">
+        <h3>&#x1f4de; 政府電話查詢熱線</h3>
+        <p class="gov-desc">税務局熱線：187 8022｜積金局熱線：183 6382｜勞工處：2717 1771</p>
+        <a class="gov-link" href="https://www.gov.hk/tc/residents/" target="_blank" rel="noopener">查詢渠道 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">常見問題</span>
+      <h2>常見問題及辦理指引</h2>
+      <p>以下是最常被問到的薪俸税及強積金問題。點擊展開查看詳細解答。</p>
+    </div>
+
+    <div style="max-width:800px;margin:0 auto">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q1：我收入不超過免税額，需要報税嗎？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">需要。即使收入不超過基本免税額而無須繳税，<strong>如收到税務局發出的報税表，仍須在限期內填妥交回</strong>。逾期交表會被罰款或檢控。如未收到報税表但過去每年均須報税，可致電 187 8022 查詢。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q2：電子報税和紙本報税有甚麼分別？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">電子報税（eTAX）的好處：<strong>自動獲一個月寬限期</strong>、可即時查閱税務狀況、可電子繳税、可儲存個人税務資料。紙本報税表須在發出日期起 1 個月內交回。兩種方式的法律效力相同。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q3：為甚麼第一期税款好像特別多？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">因為第一期税款包含<strong>暫繳税（Provisional Tax）</strong>——即預先繳付下一課税年度的税款。分期安排為：第一期約 75%（連同暫繳税），第二期約 25%。如預期下一年收入下降，可申請緩繳暫繳税。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q4：強積金供款上限是多少？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">每月有關入息超過 $30,000 時，僱主和僱員各供上限 $1,500/月（即 $30,000 × 5%）。全年合計每方最多 $18,000。少於 $7,100/月則僱員無須供款，僱主仍須供 5%。有關入息在 $7,100–$30,000 之間，雙方各供 5%。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q5：新入職的「供款假期」是甚麼意思？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">新僱員享有<strong>首 30 天供款假期</strong>，期間無須作僱員供款。但<strong>僱主須由第一天起供款</strong>。30 天後的首個不完整糠期也無須僱員供款。例如 6月5日入職：6月5日至7月4日為供款假期（免僱員供款），7月（不完整糠期）也免供，8月起正式扣供款。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q6：2025年5月1日起「取消對沖」對我有甚麼影響？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">「取消對沖」即僱主不能再用其強積金強制性供款抵銷遣散費或長期服務金。<strong>對僱員的好處：</strong>離職時可同時領取遣散費／長期服務金 <em>及</em> 全部僱主供款累算權益。2025年5月1日前已累積的僱主供款仍可用於舊有對沖安排（設有過渡安排）。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q7：我可以提前提取強積金嗎？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">65 歲前可在以下情況提取強積金：<br>1. <strong>提早退休</strong>（年滿 60 歲且永久退休）<br>2. <strong>完全喪失行為能力</strong><br>3. <strong>小額結餘</strong>（帳戶結餘 $5,000 以下且 12 個月內無供款）<br>4. <strong>永久離港</strong>（提供離港證明）<br>65 歲後可一筆過或分期提取。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q8：我懷疑僱主沒有供強積金，怎麼辦？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">首先查看每月供款記錄（僱主須在供款後 7 個工作天內提供），或登入 eMPF 平台查閱。如確認欠供，可向<strong>積金局投訴</strong>（熱線：183 6382）。積金局會跟進調查，僱主欠供可被檢控及罰款。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q9：離港前要辦理甚麼税務手續？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">離港前應：<br>1. 向税務局申請<strong>提前評税</strong>，以便在離港前清繳税款<br>2. 提交當年度報税表（如已收到）<br>3. 清繳所有税款（否則税務局可通知入境處阻止離境）<br>4. 向積金局申請提取強積金（如永久離港）<br>5. 通知僱主離港日期</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Q10：2026/27 年度免税額有甚麼變化？<span>&#9654;</span></div>
+        <div class="faq-a"><div class="faq-a-inner">2026/27 課税年度免税額已立法調升：<strong>基本免税額由 $132,000 增至 $145,000</strong>，已婚人士免税額由 $264,000 增至 $290,000，子女免税額每名由 $130,000 增至 $140,000。初生子女額外免税額延長至出生後首兩年，即首兩年每年可享雙倍免税額（合共 $280,000/年/子女）。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contacts -->
+<section class="section" id="contacts" style="background:var(--white)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">聯絡支援</span>
+      <h2>聯絡渠道一覽</h2>
+      <p>有具體問題不知道該找誰？以下是各部門及機構的聯絡方式。遇到不同問題，請聯絡相應渠道。</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4>&#x1f4dc; 税務局（IRD）</h4>
+        <div class="contact-role">薪俸税計算、報税、評税、繳税</div>
+        <div class="contact-info">
+          <span>電話：187 8022</span>
+          <a href="https://www.ird.gov.hk" target="_blank" rel="noopener">www.ird.gov.hk</a>
+          <span>地址：九龍啟德協調道5號税務中心</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>&#x1f3e2; 積金局（MPFA）</h4>
+        <div class="contact-role">強積金法規、供款查詢、投訴</div>
+        <div class="contact-info">
+          <span>電話：183 6382</span>
+          <a href="https://www.mpfa.org.hk" target="_blank" rel="noopener">www.mpfa.org.hk</a>
+          <span>投訴：積金局網上投訴表格</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>&#x1f4f1; eMPF 電子平台</h4>
+        <div class="contact-role">供款記錄、帳戶管理、累算權益</div>
+        <div class="contact-info">
+          <a href="https://www.empf.com.hk" target="_blank" rel="noopener">www.empf.com.hk</a>
+          <span>可用於查詢個人 MPF 帳戶詳情</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>&#x1f468;&#x200d;&#x2695;&#xfe0f; 勞工處</h4>
+        <div class="contact-role">僱傭權益、遣散費、長期服務金</div>
+        <div class="contact-info">
+          <span>電話：2717 1771</span>
+          <a href="https://www.labour.gov.hk" target="_blank" rel="noopener">www.labour.gov.hk</a>
+          <span>勞資關係科調解服務</span>
+        </div>
+      </div>
+      <div class="contact-card" style="text-align:center">
+        <img src="hrssc-logo.svg" alt="HRSSC" style="width:56px;height:auto;margin:0 auto 10px">
+        <h4>&#x1f4bc; 中國電信國際有限公司 HRSSC 服務台</h4>
+        <div class="contact-role">糧單查詢、MPF 供款、入職離職手續</div>
+        <div class="contact-info">
+          <a href="https://applink.feishu.cn/T8U0rOlqEQHy" target="_blank" rel="noopener">飛書服務台 →</a>
+          <span>強積金受託人聯絡方式請向 HRSSC 索取</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>&#x1f3a5; 強積金受託人</h4>
+        <div class="contact-role">基金選擇、投資組合調整、累算權益提取</div>
+        <div class="contact-info">
+          <span>請向 HRSSC 查詢公司採用的受託人</span>
+          <a href="https://www.mpfa.org.hk/tc/mpf-system/types-of-mpf-schemes/constituent-trustees" target="_blank" rel="noopener">積金局受託人名單 →</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>&#x1f4a2; 税務局薪俸税計算器</h4>
+        <div class="contact-role">官方税款計算</div>
+        <div class="contact-info">
+          <a href="https://www.ird.gov.hk/chi/ese/st_comp_2026_27/cstcfrm.htm" target="_blank" rel="noopener">官方計算器 →</a>
+          <span>2026/27 年度適用</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h4>&#x1f310; GovHK 政府一站通</h4>
+        <div class="contact-role">綜合政府服務入口</div>
+        <div class="contact-info">
+          <a href="https://www.gov.hk" target="_blank" rel="noopener">www.gov.hk</a>
+          <span>涵蓋税務、就業、退休等</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-info" style="margin-top:24px">
+      <strong>求助指引：</strong>薪俸税問題 → 税務局 187 8022 ｜ 強積金問題 → 積金局 183 6382 ｜ 僱傭權益 → 勞工處 2717 1771 ｜ 糧單及 MPF 供款記錄 → 中國電信國際 HRSSC 服務台 ｜ 基金投資 → 強積金受託人
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <img src="hrssc-logo.svg" alt="HRSSC" style="height:40px;width:auto;margin:0 auto 16px;display:block">
+    <div class="footer-links">
+      <a href="https://www.ird.gov.hk" target="_blank" rel="noopener">税務局</a>
+      <a href="https://www.mpfa.org.hk" target="_blank" rel="noopener">積金局</a>
+      <a href="https://www.labour.gov.hk" target="_blank" rel="noopener">勞工處</a>
+      <a href="https://www.gov.hk" target="_blank" rel="noopener">GovHK</a>
+      <a href="https://www.empf.com.hk" target="_blank" rel="noopener">eMPF 平台</a>
+    </div>
+    <p style="font-size:.85rem;max-width:700px;margin:0 auto 16px;opacity:.7">本網站僅供參考，不構成税務或法律建議。所有税率及免税額資料以政府官方公布為準。如有疑問，請聯絡税務局（187 8022）或積金局（183 6382）。計算結果僅供估算，實際税款以税務局評税通知書為準。</p>
+    <div class="footer-copy">&#169; 2026 薪俸税及強積金知識站 — 香港僱員指南 ｜ 最後更新：2026年9月</div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script>
+// Navigation toggle
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('show');
+}
+
+// Smooth scroll to section
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.getElementById('navLinks').classList.remove('show');
+}
+
+// Life event tabs
+function switchLifeEvent(idx,el){
+  document.querySelectorAll('.life-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('[id^="lifePanel"]').forEach(p=>p.classList.remove('active'));
+  document.getElementById('lifePanel'+idx).classList.add('active');
+}
+
+// Calculator tabs
+function switchCalcTab(idx,el){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('[id^="calcPanel"]').forEach(p=>p.classList.remove('active'));
+  document.getElementById('calcPanel'+idx).classList.add('active');
+  // Recalculate when switching
+  if(idx===0) calcTax();
+  if(idx===1) calcMPF();
+  if(idx===2) calcTHP();
+}
+
+// FAQ toggle
+function toggleFAQ(el){
+  el.parentElement.classList.toggle('open');
+}
+
+// Format currency
+function fmt(n){
+  return '$'+Math.round(n).toLocaleString('en-HK');
+}
+
+// Allowance data per tax year
+var ALLOWANCES={
+  '2026':{basic:145000,married:290000,child:140000,parent60:55000,parent55:27500},
+  '2025':{basic:132000,married:264000,child:130000,parent60:50000,parent55:25000}
+};
+
+// Calculate MPF annual contribution
+function calcMPFAnnual(annualIncome){
+  var monthly=annualIncome/12;
+  var mpfAnnual;
+  if(monthly<7100) mpfAnnual=0;
+  else if(monthly<=30000) mpfAnnual=monthly*0.05*12;
+  else mpfAnnual=1500*12;
+  // Cap at 18000
+  return Math.min(mpfAnnual,18000);
+}
+
+// Tax Calculator
+function calcTax(){
+  var income=parseFloat(document.getElementById('taxIncome').value)||0;
+  var marital=parseFloat(document.getElementById('taxMarital').value);
+  var children=parseInt(document.getElementById('taxChildren').value)||0;
+  var newborn=parseInt(document.getElementById('taxNewborn').value)||0;
+  var parent60=parseInt(document.getElementById('taxParent60').value)||0;
+  var parent55=parseInt(document.getElementById('taxParent55').value)||0;
+  var otherDed=parseFloat(document.getElementById('taxOtherDed').value)||0;
+  var yearKey=document.getElementById('taxYear').value;
+  var A=ALLOWANCES[yearKey];
+
+  // MPF mandatory contributions (employee portion, tax deductible)
+  var mpfAnnual=calcMPFAnnual(income);
+
+  // Total deductions
+  var totalDed=mpfAnnual+otherDed;
+
+  // Allowances
+  var basicAllow=A.basic;
+  var marriedAllow=marital===1?A.married:0;
+  var childAllow=(children*A.child)+(newborn*A.child); // newborn gets double (base + extra)
+  var parentAllow=parent60*A.parent60+parent55*A.parent55;
+  var totalAllow=basicAllow+marriedAllow+childAllow+parentAllow;
+
+  // Net chargeable income
+  var netChargeable=Math.max(0,income-totalDed-totalAllow);
+
+  // Progressive tax calculation
+  var progressiveTax=0;
+  var remaining=netChargeable;
+  var brackets=[
+    {limit:50000,rate:0.02},
+    {limit:50000,rate:0.06},
+    {limit:50000,rate:0.10},
+    {limit:50000,rate:0.14},
+    {limit:Infinity,rate:0.17}
+  ];
+  for(var i=0;i<brackets.length;i++){
+    var taxable=Math.min(remaining,brackets[i].limit);
+    progressiveTax+=taxable*brackets[i].rate;
+    remaining-=taxable;
+    if(remaining<=0) break;
+  }
+
+  // Standard rate tax (on net income, no allowances)
+  var netIncome=Math.max(0,income-totalDed);
+  var standardTax;
+  if(netIncome<=5000000){
+    standardTax=netIncome*0.15;
+  }else{
+    standardTax=5000000*0.15+(netIncome-5000000)*0.16;
+  }
+
+  // Tax payable = lower of two
+  var taxPayable=Math.min(progressiveTax,standardTax);
+  var monthlyTax=taxPayable/12;
+  var effectiveRate=income>0?(taxPayable/income*100):0;
+
+  // 2025/26 tax reduction
+  if(yearKey==='2025'){
+    var reduction=Math.min(taxPayable,3000);
+    taxPayable=taxPayable-reduction;
+    monthlyTax=taxPayable/12;
+    effectiveRate=income>0?(taxPayable/income*100):0;
+  }
+
+  document.getElementById('r-income').textContent=fmt(income);
+  document.getElementById('r-mpf').textContent=fmt(mpfAnnual);
+  document.getElementById('r-otherded').textContent=fmt(otherDed);
+  document.getElementById('r-allowance').textContent=fmt(totalAllow);
+  document.getElementById('r-netchargeable').textContent=fmt(netChargeable);
+  document.getElementById('r-progressive').textContent=fmt(progressiveTax);
+  document.getElementById('r-standard').textContent=fmt(standardTax);
+  document.getElementById('r-taxpayable').textContent=fmt(taxPayable);
+  document.getElementById('r-monthly').textContent=fmt(monthlyTax);
+  document.getElementById('r-effectiverate').textContent=effectiveRate.toFixed(2)+'%';
+}
+
+// MPF Calculator
+function calcMPF(){
+  var income=parseFloat(document.getElementById('mpfIncome').value)||0;
+  var bonus=parseFloat(document.getElementById('mpfBonus').value)||0;
+  var isNew=document.getElementById('mpfNew').value==='1';
+  var totalIncome=income+bonus;
+
+  var rangeText;
+  var employerContribution,employeeContribution;
+
+  if(totalIncome<7100){
+    rangeText='少於 $7,100';
+    employerContribution=totalIncome*0.05;
+    employeeContribution=0;
+  }else if(totalIncome<=30000){
+    rangeText='$7,100 – $30,000';
+    employerContribution=totalIncome*0.05;
+    employeeContribution=totalIncome*0.05;
+  }else{
+    rangeText='多於 $30,000';
+    employerContribution=1500;
+    employeeContribution=1500;
+  }
+
+  if(isNew){
+    employeeContribution=0;
+  }
+
+  var annualEmployee=employeeContribution*12;
+  var annualEmployer=employerContribution*12;
+  var taxDed=Math.min(annualEmployee,18000);
+  var netAfter=totalIncome-employeeContribution;
+
+  document.getElementById('m-income').textContent=fmt(totalIncome);
+  document.getElementById('m-range').textContent=rangeText;
+  document.getElementById('m-employer').textContent=fmt(employerContribution);
+  document.getElementById('m-employee').textContent=fmt(employeeContribution);
+  document.getElementById('m-deduction').textContent=fmt(employeeContribution);
+  document.getElementById('m-monthlydeduction').textContent=fmt(employeeContribution);
+  document.getElementById('m-annual').textContent=fmt(annualEmployee);
+  document.getElementById('m-annual-employer').textContent=fmt(annualEmployer);
+  document.getElementById('m-taxded').textContent=fmt(taxDed);
+  document.getElementById('m-netafter').textContent=fmt(netAfter);
+}
+
+// Take-home Pay Calculator
+function calcTHP(){
+  var monthly=parseFloat(document.getElementById('thpMonthly').value)||0;
+  var bonus=parseFloat(document.getElementById('thpBonus').value)||0;
+  var marital=parseFloat(document.getElementById('thpMarital').value);
+  var children=parseInt(document.getElementById('thpChildren').value)||0;
+  var otherAllow=parseFloat(document.getElementById('thpOtherAllow').value)||0;
+
+  var monthlyGross=monthly+bonus;
+  var annualGross=monthlyGross*12;
+
+  // MPF calculation
+  var mpfMonthly;
+  if(monthlyGross<7100) mpfMonthly=0;
+  else if(monthlyGross<=30000) mpfMonthly=monthlyGross*0.05;
+  else mpfMonthly=1500;
+  var mpfAfterMonthly=monthlyGross-mpfMonthly;
+  var annualMPF=mpfMonthly*12;
+
+  // Tax calculation
+  var A=ALLOWANCES['2026'];
+  var mpfAnnual=calcMPFAnnual(annualGross);
+  var totalDed=mpfAnnual+otherAllow;
+  var basicAllow=A.basic;
+  var marriedAllow=marital===1?A.married:0;
+  var childAllow=children*A.child;
+  var totalAllow=basicAllow+marriedAllow+childAllow;
+  var netChargeable=Math.max(0,annualGross-totalDed-totalAllow);
+
+  var progressiveTax=0;
+  var remaining=netChargeable;
+  var brackets=[{l:50000,r:0.02},{l:50000,r:0.06},{l:50000,r:0.10},{l:50000,r:0.14},{l:Infinity,r:0.17}];
+  for(var i=0;i<brackets.length;i++){
+    var taxable=Math.min(remaining,brackets[i].l);
+    progressiveTax+=taxable*brackets[i].r;
+    remaining-=taxable;
+    if(remaining<=0) break;
+  }
+  var netIncome=Math.max(0,annualGross-totalDed);
+  var standardTax=netIncome<=5000000?netIncome*0.15:5000000*0.15+(netIncome-5000000)*0.16;
+  var annualTax=Math.min(progressiveTax,standardTax);
+  var monthlyTax=annualTax/12;
+  var takeHome=mpfAfterMonthly-monthlyTax;
+  var annualNet=annualGross-annualMPF-annualTax;
+  var totalDeductionPct=annualGross>0?((annualMPF+annualTax)/annualGross*100):0;
+
+  document.getElementById('t-gross').textContent=fmt(monthlyGross);
+  document.getElementById('t-mpf').textContent='-'+fmt(mpfMonthly);
+  document.getElementById('t-aftermpf').textContent=fmt(mpfAfterMonthly);
+  document.getElementById('t-annualgross').textContent=fmt(annualGross);
+  document.getElementById('t-annualmpf').textContent='-'+fmt(annualMPF);
+  document.getElementById('t-tax').textContent='-'+fmt(annualTax);
+  document.getElementById('t-takehome').textContent=fmt(takeHome);
+  document.getElementById('t-annualnet').textContent=fmt(annualNet);
+  document.getElementById('t-percentage').textContent=totalDeductionPct.toFixed(1)+'%';
+}
+
+// Search functionality
+function searchContent(query){
+  query=query.trim().toLowerCase();
+  if(query.length<1){
+    document.querySelectorAll('mark').forEach(m=>{
+      m.outerHTML=m.textContent;
+    });
+    return;
+  }
+  // Simple: scroll to relevant sections based on keywords
+  var keywords={
+    '薪俸税':'salaries-tax','薪俸稅':'salaries-tax','税':'salaries-tax','稅':'salaries-tax',
+    '報税':'salaries-tax','報稅':'salaries-tax','交税':'salaries-tax','交稅':'salaries-tax',
+    'mpf':'mpf','強積金':'mpf','强积金':'mpf','積金':'mpf','供款':'mpf',
+    '離職':'life-events','离职':'life-events','轉工':'life-events','转工':'life-events',
+    '退休':'life-events','離港':'life-events','离港':'life-events',
+    '計算':'calculators','計':'calculators','估算':'calculators','計算器':'calculators',
+    'faq':'faq','問題':'faq','问题':'faq',
+    '聯絡':'contacts','联络':'contacts','聯繫':'contacts','熱線':'contacts',
+    '政府':'gov-services','官方':'gov-services'
+  };
+  for(var key in keywords){
+    if(query.includes(key)){
+      var target=document.getElementById(keywords[key]);
+      if(target){
+        target.scrollIntoView({behavior:'smooth'});
+        break;
+      }
+    }
+  }
+}
+
+// Back to top
+window.addEventListener('scroll',function(){
+  var btn=document.getElementById('backTop');
+  if(window.pageYOffset>400){
+    btn.classList.add('show');
+  }else{
+    btn.classList.remove('show');
+  }
+});
+
+// Close mobile nav when clicking a link
+document.querySelectorAll('.nav-links a').forEach(function(link){
+  link.addEventListener('click',function(){
+    document.getElementById('navLinks').classList.remove('show');
+  });
+});
+
+// Initialize calculators on load
+calcTax();
+calcMPF();
+calcTHP();
+</script>
+</body>
+</html>
